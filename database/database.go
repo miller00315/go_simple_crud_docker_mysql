@@ -3,11 +3,9 @@ package database
 import (
 	"database/sql"
 	"fmt"
-	"log"
 
 	_ "github.com/go-sql-driver/mysql" // Importação implicita que irá fornecer o driver para o mysql
 )
-
 
 // Connect conecta ao banco de dados
 func Connect() (*sql.DB, error) {
@@ -21,8 +19,6 @@ func Connect() (*sql.DB, error) {
 	if err != nil {
 		return nil, err
 	}
-
-	//defer db.Close() // Fecha o banco de dados antes da função main terminar
 
 	// Verifica se a conexão com o banco de dados ocorreu corretamente
 	// Reaproveito a variavel error utilizando apenas =
