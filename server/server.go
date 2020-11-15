@@ -156,6 +156,12 @@ func GetUser(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
+	if user.ID == 0 {
+		w.WriteHeader(http.StatusNotFound)
+		w.Write([]byte("Usuário não encontrado"))
+		return
+	}
+
 	w.WriteHeader(http.StatusOK) // Escreve o cabeçalho da resposta
 
 	// Converte para json e envia a resposta
