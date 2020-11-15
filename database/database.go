@@ -2,7 +2,6 @@ package database
 
 import (
 	"database/sql"
-	"fmt"
 
 	_ "github.com/go-sql-driver/mysql" // Importação implicita que irá fornecer o driver para o mysql
 )
@@ -25,8 +24,6 @@ func Connect() (*sql.DB, error) {
 	if err = db.Ping(); err != nil {
 		return nil, err
 	}
-
-	fmt.Println("Conectado ao banco")
 
 	return db, nil
 }
